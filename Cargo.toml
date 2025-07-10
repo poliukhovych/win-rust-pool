@@ -1,0 +1,26 @@
+[package]
+name = "win-rust-pool"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "win_rust_pool"
+path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "demo"
+path = "src/bin/demo.rs"
+
+[dependencies]
+winapi = { version = "0.3.9", features = [
+    "minwindef",
+    "handleapi",
+    "heapapi",
+    "processthreadsapi",
+    "synchapi",
+    "sysinfoapi",
+    "winbase",
+    "winnt",
+    "minwinbase"
+] }
